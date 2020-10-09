@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Controle de Estoque</title>
+    <link rel="stylesheet" href="style/main.css">
+</head>
+<body>
+    <header>
+        <img src="img/logo.png" alt="Logo da Empresa" id="logo">
+        <h1>Controle de Estoque</h1>
+        <nav>
+            <ul>
+                <li><a href="livro.html">Livro</a></li>
+                <li><a href="dvds.html">DVDs</a></li>
+                <li><a href="jogos.html">Jogos</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div id="ModalEditar">
+        <div class="ConteudoEditar">
+            <span onclick="fechaModal()">Fechar</span>
+            <h3>Editar</h3>
+            <label for="nome_editar">Nome:</label>
+            <input type="text" name="nome_editar" id="nome_editar" required>
+            <label for="cat_editar">Categoria:</label>
+            <select name="cat_editar" id="cat_editar" required>
+                <option value="none" disabled selected>Selecione a categoria</option>
+                <option value="Livro" onclick=>Livro</option>
+                <option value="DVDs" onclick=>DVDs</option>
+                <option value="Jogos" onclick=>Jogos</option>
+                <option value="Outro" onclick=>Outro..</option>
+            </select>
+            <label for="outraCat_editar">Outra categoria:</label>
+            <input type="text" name="outraCat_editar" id="outraCat_editar" placeholder="Preencher somente se for outra categoria">
+            <label for="preco_editar">Preço</label>
+            <input type="number" name="preco_editar" id="preco_editar" placeholder="R$10.00" step="any" required>
+            <button onclick="retornoModal()">Editar ✎</button>
+        </div>
+    </div>
+    <section>
+        <h2>Cadastro de Estoque</h2>
+        <input type="number" name="ID" id="ID_produto" placeholder="ID do Produto">
+        <input type="number" name="preco" id="preco" placeholder="R$10.00" step="any" required>
+        <select name="categoria_produto" id="categoria_produto" required>
+            <option value="none" disabled selected>Selecione a categoria</option>
+            <option value="Livro" onclick="removeCategoria()">Livro</option>
+            <option value="DVDs" onclick="removeCategoria()">DVDs</option>
+            <option value="Jogos" onclick="removeCategoria()">Jogos</option>
+            <option value="Outro" onclick="novaCategoria()">Outro..</option>
+        </select>
+        <input type="text" name="outra_cat" id="outra_cat" placeholder="Categoria">
+        <input type="text" name="nome" id="nome" placeholder="Nome do Produto" required>
+        <button onclick="criar()" name="Criar">Criar ✎</button>
+    </section>
+    <main>
+        <table>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Nome</th>
+                    <th>Categoria</th>
+                    <th>Preço</th>
+                    <th>Editar</th>
+                    <th>Excluir</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr id="1">
+                    <td>1</td>
+                    <td>A Vingança da Porra Toda</td>
+                    <td>Livro</td>
+                    <td>R$22,80</td>
+                    <td><button onclick="editar()">Editar ✎</button></td>
+                    <td><button onclick="excluir()">Excluir &#128465;</button></td>
+                </tr>
+                <tr id="2">
+                    <td>2</td>
+                    <td>A Vingança da Coisa Toda</td>
+                    <td>Livro</td>
+                    <td>R$32,80</td>
+                    <td><button onclick="editar()">Editar ✎</button></td>
+                    <td><button onclick="excluir()">Excluir &#128465;</button></td>
+                </tr>
+                <tr id="3">
+                    <td>3</td>
+                    <td>A Vingança da Budega Toda</td>
+                    <td>Livro</td>
+                    <td>R$12,80</td>
+                    <td><button onclick="editar()">Editar ✎</button></td>
+                    <td><button onclick="excluir()">Excluir &#128465;</button></td>
+                </tr>
+        </tbody>
+        </table>
+    </main>
+    <script src="script/main.js"></script>
+</body>
+</html>
