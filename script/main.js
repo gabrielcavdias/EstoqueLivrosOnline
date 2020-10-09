@@ -48,7 +48,6 @@ function editar(){
     let nome = event.currentTarget.parentElement.previousSibling.previousSibling.previousSibling.previousSibling.previousSibling.previousSibling
     let preco = event.currentTarget.parentElement.previousSibling.previousSibling
     let categoria = event.currentTarget.parentElement.previousSibling.previousSibling.previousSibling.previousSibling
-    let retorno = abrirModal()
     nome.value = 'Teste'
     preco.value = 'teste'
     categoria.value = 'teste'
