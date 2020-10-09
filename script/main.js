@@ -8,7 +8,7 @@ function removeCategoria(){
 }
 function criar(){
     let tbody = document.querySelector('tbody')
-    if(name.value==''||preco.value==''||categoria_produto.value=='none'){
+    if(name.value==''||ID_produto.value==''||preco.value==''||categoria_produto.value=='none'){
         window.alert("Não deixe campos vazios")
     }else{
         let vamoconcatenar = `
